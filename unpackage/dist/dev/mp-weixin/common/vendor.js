@@ -19730,11 +19730,11 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.userGet = 
 
 //获得基本信息
 function userGet(query) {
-  return (0, _api.get)('/member/user/get', query);
+  return (0, _api.get)('app-api/member/user/get', query);
 }
 //修改基本信息
 function userGetUpdat(data) {
-  return (0, _api.put)('/member/user/update', data);
+  return (0, _api.put)('app-api/member/user/update', data);
 }
 
 /***/ }),
@@ -20025,7 +20025,7 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.login = lo
 
 //使用手机 + 密码登录
 function login(data) {
-  return (0, _api.post)('/member/auth/login', data);
+  return (0, _api.post)('app-api/member/auth/login', data);
 }
 
 /***/ }),
@@ -20070,23 +20070,23 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.employeesP
 
 //获得员工分页
 function employeesPage(query) {
-  return (0, _api.get)('/app/employees/page', query);
+  return (0, _api.get)('app-api/app/employees/page', query);
 }
 //创建员工
 function employeesCreate(data) {
-  return (0, _api.post)('/app/employees/create', data);
+  return (0, _api.post)('app-api/app/employees/create', data);
 }
 //更新员工
 function employeesUpdate(data) {
-  return (0, _api.put)('/app/employees/update', data);
+  return (0, _api.put)('app-api/app/employees/update', data);
 }
 //删除员工
 function employeesDelete(data) {
-  return (0, _api.del)('/app/employees/delete', data);
+  return (0, _api.del)('app-api/app/employees/delete', data);
 }
 //获得某个员工详情
 function employeesGet(query) {
-  return (0, _api.get)('/app/employees/get', query);
+  return (0, _api.get)('app-api/app/employees/get', query);
 }
 
 /***/ }),
@@ -20118,7 +20118,7 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.reviewsPag
 
 //获取评价
 function reviewsPage(query) {
-  return (0, _api.get)('/app/reviews/page', query);
+  return (0, _api.get)('app-api/app/reviews/page', query);
 }
 
 /***/ }),
@@ -20180,7 +20180,7 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.userInsert
 
 //注册
 function userInsert(data) {
-  return (0, _api.put)('/member/user/insert', data);
+  return (0, _api.put)('app-api/member/user/insert', data);
 }
 
 /***/ }),

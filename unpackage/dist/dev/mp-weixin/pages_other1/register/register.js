@@ -914,10 +914,11 @@ var _vuex = __webpack_require__(/*! vuex */ 9);function _interopRequireDefault(o
       var urls2 = this.fileList2.map(function (item) {return item.url;});
       var urls3 = this.fileList3.map(function (item) {return item.url;});
       var urls4 = this.fileList4.map(function (item) {return item.url;});
-      this.$set(this.form, 'businessLicensePhoto', urls1);
-      this.$set(this.form, 'storefrontPhoto', urls2);
-      this.$set(this.form, 'foodBusinessLicensePhoto', urls3);
-      this.$set(this.form, 'foodSafetyManagementPhoto', urls4);
+      this.$set(this.form, 'businessLicensePhoto', urls1[0]);
+      this.$set(this.form, 'storefrontPhoto', urls2[0]);
+      this.$set(this.form, 'foodBusinessLicensePhoto', urls3[0]);
+      this.$set(this.form, 'foodSafetyManagementPhoto', urls4[0]);
+
       console.log(this.form);
       this.$refs.uForm.
       validate().

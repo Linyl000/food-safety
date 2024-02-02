@@ -29,7 +29,7 @@
 					<u-form-item label="上传负责人头像" required prop="avatar">
 						<view style="position: relative;">
 							<image
-								:src="form.avatar ? form.avatar : '../../static/up-image.png'"
+								:src="form.avatar ? 'http://121.196.244.217:8084/shian-server' + form.avatar : '../../static/up-image.png'"
 								mode="widthFix"
 								style="width: 170rpx;"
 								@click="form.avatar ? previewImage(form.avatar) : changeAvatar('avater')"
@@ -43,11 +43,13 @@
 						<view style="position: relative;">
 							<!-- form.idPortraitPhoto ? previewImage(form.idPortraitPhoto) :goCropping2(); -->
 							<img
-								:src="form.idPortraitPhoto ? form.idPortraitPhoto : '../../static/front.png'"
+								:src="form.idPortraitPhoto ? 'http://121.196.244.217:8084/shian-server' + form.idPortraitPhoto : '../../static/front.png'"
 								alt=""
 								style="width: 574rpx;height: 364rpx;"
 								@click="
-									form.idPortraitPhoto ? previewImage(form.idPortraitPhoto) : (showAction = true);
+									form.idPortraitPhoto
+										? previewImage('http://121.196.244.217:8084/shian-server' + form.idPortraitPhoto)
+										: (showAction = true);
 
 									cardType = 'front';
 								"
@@ -62,11 +64,11 @@
 						<view style="position: relative;">
 							<!-- form.idEmblemPhoto ? previewImage(form.idEmblemPhoto) :  goCropping2();-->
 							<img
-								:src="form.idEmblemPhoto ? form.idEmblemPhoto : '../../static/back.png'"
+								:src="form.idEmblemPhoto ? 'http://121.196.244.217:8084/shian-server' + form.idEmblemPhoto : '../../static/back.png'"
 								alt=""
 								style="width: 574rpx;height: 364rpx;"
 								@click="
-									form.idEmblemPhoto ? previewImage(form.idEmblemPhoto) : (showAction = true);
+									form.idEmblemPhoto ? previewImage('http://121.196.244.217:8084/shian-server' + form.idEmblemPhoto) : (showAction = true);
 									cardType = 'back';
 								"
 							/>
@@ -170,10 +172,10 @@
 					<u-form-item label="上传商标logo" required prop="logo">
 						<view style="position: relative;">
 							<image
-								:src="form.logo ? form.logo : '../../static/up-image.png'"
+								:src="form.logo ? 'http://121.196.244.217:8084/shian-server' + form.logo : '../../static/up-image.png'"
 								mode="widthFix"
 								style="width: 170rpx;"
-								@click="form.logo ? previewImage(form.logo) : changeAvatar('logo')"
+								@click="form.logo ? previewImage('http://121.196.244.217:8084/shian-server' + form.logo) : changeAvatar('logo')"
 							></image>
 							<div v-if="form.logo" style="position: absolute; top: 0rpx; left: 140rpx;" @click="form.logo = null">
 								<u-icon name="close-circle-fill" size="30"></u-icon>
@@ -543,10 +545,11 @@ export default {
 			const urls2 = this.fileList2.map(item => item.url);
 			const urls3 = this.fileList3.map(item => item.url);
 			const urls4 = this.fileList4.map(item => item.url);
-			this.$set(this.form, 'businessLicensePhoto', urls1);
-			this.$set(this.form, 'storefrontPhoto', urls2);
-			this.$set(this.form, 'foodBusinessLicensePhoto', urls3);
-			this.$set(this.form, 'foodSafetyManagementPhoto', urls4);
+			this.$set(this.form, 'businessLicensePhoto', urls1[0]);
+			this.$set(this.form, 'storefrontPhoto', urls2[0]);
+			this.$set(this.form, 'foodBusinessLicensePhoto', urls3[0]);
+			this.$set(this.form, 'foodSafetyManagementPhoto', urls4[0]);
+
 			console.log(this.form);
 			this.$refs.uForm
 				.validate()
